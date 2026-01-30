@@ -20,71 +20,75 @@ import {
     AccountBalance,
     HowToReg
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 function AdminHomePage() {
+
+    const navigate = useNavigate();
+
     /* Drawer Content */
     const drawerContent = (
-    <Box>
-        <Typography
-            variant="h6"
-            sx={{ p: 2, fontWeight: "bold", textAlign: "center" }}
-        >
-            Admin Panel
-        </Typography>
+        <Box>
+            <Typography
+                variant="h6"
+                sx={{ p: 2, fontWeight: "bold", textAlign: "center" }}
+            >
+                Admin Panel
+            </Typography>
 
-        <List>
-            {/* Add College */}
-            <ListItem disablePadding>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <School />
-                    </ListItemIcon>
-                    <ListItemText primary="Add College" />
-                </ListItemButton>
-            </ListItem>
+            <List>
+                {/* Add College */}
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => navigate("/add-institution")}>
+                        <ListItemIcon>
+                            <School />
+                        </ListItemIcon>
+                        <ListItemText primary="Add College" />
+                    </ListItemButton>
+                </ListItem>
 
-            {/* View Colleges */}
-            <ListItem disablePadding>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <AccountBalance />
-                    </ListItemIcon>
-                    <ListItemText primary="View Colleges" />
-                </ListItemButton>
-            </ListItem>
+                {/* View Colleges */}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <AccountBalance />
+                        </ListItemIcon>
+                        <ListItemText primary="View Colleges" />
+                    </ListItemButton>
+                </ListItem>
 
-            {/* College Registration Requests */}
-            <ListItem disablePadding>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <HowToReg />
-                    </ListItemIcon>
-                    <ListItemText primary="College Registration Requests" />
-                </ListItemButton>
-            </ListItem>
+                {/* College Registration Requests */}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <HowToReg />
+                        </ListItemIcon>
+                        <ListItemText primary="College Registration Requests" />
+                    </ListItemButton>
+                </ListItem>
 
-            {/* View Complaints */}
-            <ListItem disablePadding>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <ReportProblem />
-                    </ListItemIcon>
-                    <ListItemText primary="View Complaints" />
-                </ListItemButton>
-            </ListItem>
+                {/* View Complaints */}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <ReportProblem />
+                        </ListItemIcon>
+                        <ListItemText primary="View Complaints" />
+                    </ListItemButton>
+                </ListItem>
 
-            {/* Settings */}
-            <ListItem disablePadding>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <Settings />
-                    </ListItemIcon>
-                    <ListItemText primary="Settings" />
-                </ListItemButton>
-            </ListItem>
-        </List>
-    </Box>
-);
+                {/* Settings */}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <Settings />
+                        </ListItemIcon>
+                        <ListItemText primary="Settings" />
+                    </ListItemButton>
+                </ListItem>
+            </List>
+        </Box>
+    );
 
     return (
         <ResponsiveLayout drawerContent={drawerContent}>
