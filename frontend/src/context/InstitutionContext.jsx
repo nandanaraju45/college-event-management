@@ -22,9 +22,19 @@ export const InstitutionProvider = ({ children }) => {
         return res.data;
     };
 
+    // 3. Get All Institutions
+    const getAllInstitutions = async () => {
+        const res = await axios.get("http://localhost:5000/api/institutions", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return res.data;
+    };
+
     return (
         <InstitutionContext.Provider
-            value={{ registerCollegeAdmin, createInstitution }}
+            value={{ registerCollegeAdmin, createInstitution, getAllInstitutions }}
         >
             {children}
         </InstitutionContext.Provider>

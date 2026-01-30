@@ -49,7 +49,7 @@ function AdminHomePage() {
 
                 {/* View Colleges */}
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton onClick={() => navigate("/institutions")}>
                         <ListItemIcon>
                             <AccountBalance />
                         </ListItemIcon>

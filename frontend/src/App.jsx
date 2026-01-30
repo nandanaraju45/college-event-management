@@ -6,6 +6,7 @@ import AdminDashboardPage from './pages/AdminDashboardPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AddInstitutionPage from './pages/AddInstitutionPage'
+import InstitutionListPage from './pages/InstitutionListPage'
 
 const App = () => {
   return (
@@ -26,6 +27,12 @@ const App = () => {
           <Route path='/add-institution' element={
             <ProtectedRoute allowedTypes={["admin"]}>
               <AddInstitutionPage />
+            </ProtectedRoute>
+          } />
+
+          <Route path='/institutions' element={
+            <ProtectedRoute allowedTypes={["admin"]}>
+              <InstitutionListPage />
             </ProtectedRoute>
           } />
 
